@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <title>Proyecto final</title>
+    
+</head>
+
+<body>
+    <header>
+        <h1>Proyecto final redes</h1>
+        <nav>
+            <a href="/inicio">Inicio</a> |
+            <a href="/info">Info</a> |
+        </nav> 
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+</body>
+    <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+</html>
