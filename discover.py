@@ -18,7 +18,7 @@ def maqueta_conexiones(interfaces,conexiones_pc):
                                 try:
                                     network = conexiones_router(x,y)
                                 except:
-                                    print("error")
+                                    pass
                                 else:
                                     # Si la conexion directa encontrada no esta en nuestra lista de ip's se agrega
                                     if network not in conexiones:

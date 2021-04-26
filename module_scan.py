@@ -36,7 +36,7 @@ def scan_by_interface(interface_name="tap0",user="admin",password="admin01",secr
         #print("No hay una dirección IPv4 en la interfaz")
         return [-1,-1]
     dic_data=dic_data[2][0]
-    #print(f"\n---------About---------\n{interface_name}:{dic_data}")
+    print(f"\n---------About---------\n{interface_name}:{dic_data}")
     addr=list(map(int,dic_data["addr"].split(".")))
     net=list(map(int,dic_data["netmask"].split(".")))
 
@@ -77,7 +77,7 @@ def scan_by_interface(interface_name="tap0",user="admin",password="admin01",secr
         flag=False
         # Los datos del router (Interfaces)
         for k,v in i.items():
-            #print(f"-------Enviando comandos a router con ip: {k}-------")
+            print(f"-------Enviando comandos a router con ip: {k}-------")
             cisco["ip"]=k
             output=conectar(cisco,cmd)
             dir=re.split("\n|  Internet address is | ",output[0])
@@ -120,9 +120,9 @@ def scan_by_interface(interface_name="tap0",user="admin",password="admin01",secr
                             id=get_id_net(list(map(int,red_e[0].split("."))),net)
                             br=get_broadcast_ip(id,net)
                             ip=[id[0],id[1],id[2],id[3]+1]
-                            #print(f"-------Scan Network:-------\n\tID: {arr_to_ip(id)}\n\tNetmask: {arr_to_ip(net)}\n\tBroadcast: {arr_to_ip(br)}")
+                            print(f"-------Scan Network:-------\n\tID: {arr_to_ip(id)}\n\tNetmask: {arr_to_ip(net)}\n\tBroadcast: {arr_to_ip(br)}")
                             resp_r=scan_range(ip,br)
-                            #print(f"de la ip {ip} con rango {br} responde {resp_r}")
+                            print(f"De este analisis obtuvimos respuesta de {resp_r}")
                             responde=responde+resp_r
                             # aca filtrar Equipos cisco
                             for a in range(len(resp_r)):

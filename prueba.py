@@ -1,4 +1,4 @@
-from module_scan import os
+from module_scan import os, scan_by_interface
 from topologia import Topologia
 from discover import maqueta_conexiones
 

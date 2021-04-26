@@ -108,7 +108,7 @@ def scan_range(ips,broadcast):
         if i%c==0 and i>0:
             for t in range(len(threads)):
                 threads[t].join()
-                #print(responde[t][1])
+                print(responde[t][1])
                 if responde[t][0]:
                     ttl=responde[t][3].split("ttl=")[1]
                     ttl=int(ttl.split(" ")[0])
