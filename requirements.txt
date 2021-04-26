@@ -3,3 +3,5 @@ pyvis==0.1.9
 networkx==2.5.1
 Flask==1.1.2
 netmiko==3.4.0
+scapy==2.4.5
+netifaces
