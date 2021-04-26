@@ -1,7 +1,5 @@
-#!/usr/bin/env python3
 from netmiko import ConnectHandler
 import telnetlib
-
 
 def conectar(cisco,cmd):
     net_connect = ConnectHandler(**cisco)

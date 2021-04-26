@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 from detecta import *
 from ssh_connect import *
 import os

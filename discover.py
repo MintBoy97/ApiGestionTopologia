@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from module_scan import *
 
-def coneziones(interfaces,conexiones_pc):
+def maqueta_conexiones(interfaces,conexiones_pc):
     resultado = {}
     for i in interfaces:
         for x in i.keys():
