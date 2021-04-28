@@ -1,0 +1,16 @@
+<!--Archivo de prueba, sera remplazado con las nuevas UI-->
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+Panel de control
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+{% endblock %}
+
+{% block content %}
+<h1>Panel de control</h1>
+<a href="/cerrar_sesion">Salir</a>
+{% endblock %}

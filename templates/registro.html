@@ -1,0 +1,28 @@
+<!--Archivo de prueba, sera remplazado con las nuevas UI-->
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+Registro
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+{% endblock %}
+
+{% block content %}
+<h1>Registro</h1>
+<form action="/registro" method="POST">
+    <label for="">{{formulario.hidden_tag()}}</label>
+    {{wtf.form_field(formulario.email)}}
+    <br/>
+    {{wtf.form_field(formulario.nombre)}}
+    <br/>
+    {{wtf.form_field(formulario.usuario)}}
+    <br/>
+    {{wtf.form_field(formulario.contrasenia)}}
+    <br/>
+    <button type="submit">registrarse</button>
+</form>
+<a href="/inicio_sesion">inicia sesion</a>
+{% endblock %}

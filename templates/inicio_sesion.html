@@ -1,0 +1,26 @@
+<!--Archivo de prueba, sera remplazado con las nuevas UI-->
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+Inicio Sesion
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+{% endblock %}
+
+{% block content %}
+<h1>Iniciar sesion</h1>
+<form action="/inicio_sesion" method="POST">
+    <label for="">{{formulario.hidden_tag()}}</label>
+    {{wtf.form_field(formulario.usuario)}}
+    <br/>
+    {{wtf.form_field(formulario.contrasenia)}}
+    <br/>
+    {{wtf.form_field(formulario.recuerdame)}}
+    <br/>
+    <button type="submit">iniciar sesion</button>
+</form>
+<a href="/registro">registrate aqui</a>
+{% endblock %}
