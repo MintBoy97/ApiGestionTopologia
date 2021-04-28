@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, flash, redirect
-from prueba import deteccionTopologia
+from principal import deteccionTopologia
 app = Flask(__name__)
 
 
