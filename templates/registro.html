@@ -1,44 +1,13 @@
-{% import "bootstrap/wtf.html" as wtf %}
+{% extends "maqueta.html" %}
 
-<!doctype html>
-<html lang="en">
+{% block titulo %} Registro {% endblock %}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Equipo alfa buena onda maravilla dinamita escuadrón lobo">
-    <meta name="generator" content="Version 1.0">
-    <title>Gestor de Redes</title>
+{% block estilos %}
+<link href="{{ url_for('static', filename='css/signin.css') }}" rel="stylesheet">
+{% endblock%}
 
-
-
-    <!-- Bootstrap core CSS -->
-    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-
-
-    <!-- Custom styles for this template -->
-    <link href="{{ url_for('static', filename='css/signin.css') }}" rel="stylesheet">
-</head>
-
+{% block cuerpo %}
 <body class="text-center bg-dark">
-
     <main class="form-signin">
         <form action="/registro" method="POST">
             <label for="">{{formulario.hidden_tag()}}</label>
@@ -73,29 +42,5 @@
             <p class="mt-5 mb-3 text-muted">&copy; Equipo alfa buena onda maravilla dinamita escuadrón lobo</p>
         </form>
     </main>
-
-
-
 </body>
-
-</html>
-
-
-
-
-<!--
-<h1>Registro</h1>
-<form action="/registro" method="POST">
-    <label for="">{{formulario.hidden_tag()}}</label>
-    {{wtf.form_field(formulario.email)}}
-    <br/>
-    {{wtf.form_field(formulario.nombre)}}
-    <br/>
-    {{wtf.form_field(formulario.usuario)}}
-    <br/>
-    {{wtf.form_field(formulario.contrasenia)}}
-    <br/>
-    <button type="submit">registrarse</button>
-</form>
-<a href="/inicio_sesion">inicia sesion</a>
--->
+{% endblock %}]

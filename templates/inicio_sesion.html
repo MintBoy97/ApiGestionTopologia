@@ -1,43 +1,13 @@
-{% import "bootstrap/wtf.html" as wtf %}
-<!doctype html>
-<html lang="en">
+{% extends "maqueta.html" %}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Equipo alfa buena onda maravilla dinamita escuadrón lobo">
-    <meta name="generator" content="Version 1.0">
-    <title>Gestor de Redes</title>
+{% block titulo %} Iniciar sesión {% endblock %}
 
+{% block estilos %}
+<link href="{{ url_for('static', filename='css/signin.css') }}" rel="stylesheet">
+{% endblock%}
 
-
-    <!-- Bootstrap core CSS -->
-    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-
-
-    <!-- Custom styles for this template -->
-    <link href="{{ url_for('static', filename='css/signin.css') }}" rel="stylesheet">
-</head>
-
+{% block cuerpo %}
 <body class="text-center bg-dark">
-
     <main class="form-signin">
         <form action="/inicio_sesion" method="POST">
             <label for="">{{ formulario.hidden_tag() }}</label>
@@ -65,9 +35,5 @@
             <p class="mt-5 mb-3 text-muted">&copy; Equipo alfa buena onda maravilla dinamita escuadrón lobo</p>
         </form>
     </main>
-
-
-
 </body>
-
-</html>
+{% endblock %}

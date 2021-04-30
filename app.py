@@ -1,5 +1,5 @@
 # bibliotecas para la aplicacion, formularios y control de sesiones
-from flask import Flask, render_template, url_for, flash, redirect
+from flask import Flask, render_template, url_for, flash, redirect, request
 from flask_bootstrap import Bootstrap
 from formularios import *
 from flask_sqlalchemy import SQLAlchemy
@@ -73,6 +73,11 @@ def registro():
 @login_required
 def panel_control():
     return render_template('panel_control.html')
+
+@app.route('/configura_router/<string:router_name>', methods=['GET','POST'])
+@login_required
+def configura_router(router_name):
+    return render_template('configura_router.html',router_name=router_name)
 
 @app.route('/cerrar_sesion')
 @login_required
