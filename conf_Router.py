@@ -1,6 +1,6 @@
 from ssh_connect import conectar
 
-def crear_Usuario(usuario, password, privilegios, ipRouter, usuario = 'admin', contra = 'admin01', secret = '1234'):
+def crear_Usuario(usuario, password, privilegios, ipRouter, usuar = 'admin', contra = 'admin01', secret = '1234'):
     cisco={
         "device_type":"cisco_xe",
         "ip":ipRouter,
@@ -12,7 +12,7 @@ def crear_Usuario(usuario, password, privilegios, ipRouter, usuario = 'admin', c
     conectar(cisco, cmd)
     print(f'Creado el usario: {usario} con exito')
 
-def modificar_Usuario(usuario, password, privilegios, ipRouter, usuario = 'admin', contra = 'admin01', secret = '1234'):
+def modificar_Usuario(usuario, password, privilegios, ipRouter, usuar = 'admin', contra = 'admin01', secret = '1234'):
     cisco={
         "device_type":"cisco_xe",
         "ip":ipRouter,
@@ -24,7 +24,7 @@ def modificar_Usuario(usuario, password, privilegios, ipRouter, usuario = 'admin
     conectar(cisco, cmd)
     print(f'El usario: {usario} se modificó con exito')
 
-def eliminar_Usuario(usuario, ipRouter, usuario = 'admin', contra = 'admin01', secret = '1234'):
+def eliminar_Usuario(usuario, ipRouter, usuar = 'admin', contra = 'admin01', secret = '1234'):
     cisco{
         "device_type":"cisco_xe",
         "ip":ipRouter,
@@ -36,7 +36,7 @@ def eliminar_Usuario(usuario, ipRouter, usuario = 'admin', contra = 'admin01', s
     conectar(cisco, cmd)
     print(f'Usuario borrado con exito')
 
-def config_RIP(network, ipRouter, usuario = 'admin', contra = 'admin01', secret = '1234'):
+def config_RIP(network, ipRouter, usuar = 'admin', contra = 'admin01', secret = '1234'):
     cisco={
         "device_type":"cisco_xe",
         "ip":ipRouter,
@@ -48,7 +48,7 @@ def config_RIP(network, ipRouter, usuario = 'admin', contra = 'admin01', secret 
     conectar(cisco, cmd)
     print(f'Configuracion RIP en el router {ipRouter} se completo con exito')
 
-def config_Estatico(ipRouter, lanConexion, NetMask, primerSalto, usuario = 'admin', contra = 'admin01', secret = '1234'):
+def config_Estatico(ipRouter, lanConexion, NetMask, primerSalto, usuar = 'admin', contra = 'admin01', secret = '1234'):
     cisco={
         "device_type":"cisco_xe",
         "ip":ipRouter,
