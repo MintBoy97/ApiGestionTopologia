@@ -1,0 +1,39 @@
+{% extends "maqueta.html" %}
+
+{% block titulo %} Iniciar sesión {% endblock %}
+
+{% block estilos %}
+<link href="{{ url_for('static', filename='css/signin.css') }}" rel="stylesheet">
+{% endblock%}
+
+{% block cuerpo %}
+<body class="text-center bg-dark">
+    <main class="form-signin">
+        <form action="/inicio_sesion" method="POST">
+            <label for="">{{ formulario.hidden_tag() }}</label>
+            <img class="mb-4" src="{{ url_for('static', filename='img/loggeo.png') }}" alt="" width="110" height="105">
+            <h1 class="h3 mb-3 fw-normal text-white">Iniciar Sesión</h1>
+
+            <div class="form-floating">
+                {{wtf.form_field(formulario.usuario, placeholder="Usuario")}}
+            </div>
+            <div class="form-floating">
+                {{wtf.form_field(formulario.contrasenia, placeholder="Contraseña")}}
+            </div>
+
+            <div class="checkbox mb-3 text-white">
+                <label>
+                    {{wtf.form_field(formulario.recuerdame)}}
+                </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary fw-bold border-white bg-white text-dark "
+                type="submit">Entrar</button>
+            <div class="mt-4 text-center text-white-50">
+                ¿No tienes una cuenta?,<a href="/registro" class="text-white">Crea una</a>
+                <a href="#" class="float-right text-white">¿Olvidaste tu contraseña?</a>
+            </div>
+            <p class="mt-5 mb-3 text-muted">&copy; Equipo alfa buena onda maravilla dinamita escuadrón lobo</p>
+        </form>
+    </main>
+</body>
+{% endblock %}

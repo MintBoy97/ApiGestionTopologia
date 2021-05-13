@@ -1,0 +1,108 @@
+{% extends "maqueta.html" %}
+
+{% block titulo %} Router {{router_name}} {% endblock %}
+
+{% block estilos %}
+<link href="{{ url_for('static', filename='css/dashboard.css') }}" rel="stylesheet">
+{% endblock%}
+
+{% block contenido %}
+<div class="container-fluid">
+    <div class="row">
+
+        <main>
+            <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Router {{router_name}}</h1>
+            </div>
+
+            <h3>Lista de usuarios en el Router</h3>
+            <div class="table-responsive d-flex justify-content-end align-items-end flex-column">
+                <table class="table table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th>Nombre de Usuario</th>
+                            <th>Contraseña</th>
+                            <th>Privilegios</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" disabled class="form-control" id="floatingInput" value="UserN"></td>
+                            <td><input type="password" class="form-control" id="floatingPassword" value="contra"></td>
+                            <td><input type="text" class="form-control" id="floatingPriv" value="15"></td>
+                            <td><input type="checkbox" value="select"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" disabled class="form-control" id="floatingInput" value="UserN"></td>
+                            <td><input type="password" class="form-control" id="floatingPassword" value="contra"></td>
+                            <td><input type="text" class="form-control" id="floatingPriv" value="15"></td>
+                            <td><input type="checkbox" value="select"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" disabled class="form-control" id="floatingInput" value="UserN"></td>
+                            <td><input type="password" class="form-control" id="floatingPassword" value="contra"></td>
+                            <td><input type="text" class="form-control" id="floatingPriv" value="15"></td>
+                            <td><input type="checkbox" value="select"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" disabled class="form-control" id="floatingInput" value="UserN"></td>
+                            <td><input type="password" class="form-control" id="floatingPassword" value="contra"></td>
+                            <td><input type="text" class="form-control" id="floatingPriv" value="15"></td>
+                            <td><input type="checkbox" value="select"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control" id="floatingInput" placeholder="Usuario"></td>
+                            <td><input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña"></td>
+                            <td><input type="text" class="form-control" id="floatingPriv" placeholder="Privilegios"></td>
+                            <td><input type="checkbox" value="select"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h6 class="sidebar-heading d-flex justif-content-between align-items-start px-3 mt-4 mb-1 text-muted">
+                    <span><a href="#">Añadir usuario</a></span>
+                </h6>
+            </div>
+
+            <h3>Protocolos</h3>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Habilitar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>random</td>
+                            <td><input type="checkbox" value="select"></td>
+                        </tr>
+                        <tr>
+                            <td>random</td>
+                            <td><input type="checkbox" value="select"></td>
+                        </tr>
+                        <tr>
+                            <td>random</td>
+                            <td><input type="checkbox" value="select"></td>
+                        </tr>
+                        <tr>
+                            <td>random</td>
+                            <td><input type="checkbox" value="select"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex justify-content-end">
+                <button type="button" class="btn btn-sm btn-outline-secondary">
+                    Guardar configuración
+                </button>
+            </div>
+            <footer class="mt-auto text-white-50">
+                <p class="mt-5 mb-3 text-muted">&copy; Equipo alfa buena onda maravilla dinamita escuadrón lobo</p>
+            </footer>
+        </main>
+    </div>
+</div>
+{% endblock %}
