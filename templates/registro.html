@@ -1,0 +1,46 @@
+{% extends "maqueta.html" %}
+
+{% block titulo %} Registro {% endblock %}
+
+{% block estilos %}
+<link href="{{ url_for('static', filename='css/signin.css') }}" rel="stylesheet">
+{% endblock%}
+
+{% block cuerpo %}
+<body class="text-center bg-dark">
+    <main class="form-signin">
+        <form action="/registro" method="POST">
+            <label for="">{{formulario.hidden_tag()}}</label>
+            <img class="mb-4" src="{{ url_for('static', filename='img/loggeo.png') }}" alt="" width="110" height="105">
+            <h1 class="h3 mb-3 fw-normal text-white">Registro</h1>
+
+            <div class="form-floating">
+                {{wtf.form_field(formulario.email, placeholder="Correo electrónico")}}
+            </div>
+            <div class="form-floating">
+                {{wtf.form_field(formulario.nombre, placeholder="Nombre completo")}}
+            </div>
+            <div class="form-floating">
+                {{wtf.form_field(formulario.usuario, placeholder="Elija un usuario")}}
+            </div>
+            <div class="form-floating">
+                {{wtf.form_field(formulario.contrasenia, placeholder="Elija una contraseña")}}
+            </div>
+            <div class="checkbox mb-3 text-white">
+                <label>
+                    <input type="checkbox" value="remember-me"> Acepto los téminos y condiciones
+                </label>
+                <div class="invalid-feedback">
+                    Se requiere aceptar los terminos y condiciones
+                </div>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary fw-bold border-white bg-white text-dark "
+                type="submit">Registrarse</button>
+            <div class="mt-4 text-center text-white-50">
+                ¿Ya tienes una cuenta? <a href="/inicio_sesion" class="text-white">Inicia Sesión</a>
+            </div>
+            <p class="mt-5 mb-3 text-muted">&copy; Equipo alfa buena onda maravilla dinamita escuadrón lobo</p>
+        </form>
+    </main>
+</body>
+{% endblock %}]
