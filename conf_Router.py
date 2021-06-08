@@ -4,11 +4,11 @@ def crear_Usuario(usuario, password, privilegios, ipRouter, usuar = 'admin', con
     cisco={
         "device_type":"cisco_xe",
         "ip":ipRouter,
-        "username":user,
+        "username":usuario,
         "password":contra,
         "secret":secret
     }
-    cmd = [f'username {username} privilege {privilegios} password {password}']
+    cmd = [f'username {usuario} privilege {privilegios} password {password}']
     conectar(cisco, cmd)
     print(f'Creado el usario: {usario} con exito')
 
@@ -16,19 +16,19 @@ def modificar_Usuario(usuario, password, privilegios, ipRouter, usuar = 'admin',
     cisco={
         "device_type":"cisco_xe",
         "ip":ipRouter,
-        "username":user,
+        "username":usuario,
         "password":contra,
         "secret":secret
     }
-    cmd = [f'username {username} privilege {privilegios} password {password}']
+    cmd = [f'username {usuario} privilege {privilegios} password {password}']
     conectar(cisco, cmd)
-    print(f'El usario: {usario} se modificó con exito')
+    print(f'El usario: {usuario} se modificó con exito')
 
 def eliminar_Usuario(usuario, ipRouter, usuar = 'admin', contra = 'admin01', secret = '1234'):
-    cisco{
+    cisco={
         "device_type":"cisco_xe",
         "ip":ipRouter,
-        "username":user,
+        "username":usuario,
         "password":contra,
         "secret":secret
     }
@@ -36,14 +36,14 @@ def eliminar_Usuario(usuario, ipRouter, usuar = 'admin', contra = 'admin01', sec
     conectar(cisco, cmd)
     print(f'Usuario borrado con exito')
 
-def config_RIP(network, ipRouter, usuar = 'admin', contra = 'admin01', secret = '1234'):
+def cambiar_Nombre_Host(usuario, ipRouter, hostname, usuar = 'admin', contra = 'admin01', secret = '1234' ):
     cisco={
-        "device_type":"cisco_xe",
-        "ip":ipRouter,
-        "username":user,
-        "password":contra,
-        "secret":secret
-    }
-    cmd = ['conf t', 'router rip', f'network {network}']
+            "device_type":"cisco_xe",
+            "ip":ipRouter,
+            "username":usuario,
+            "password":contra,
+            "secret":secret
+        }
+    cmd = [f'hostname {hostname}']
     conectar(cisco, cmd)
-    print(f'Configuracion RIP en el router {ipRouter} se completo con exito')
+    print(f'El hostname se actualizo con exito a {hostname}')
