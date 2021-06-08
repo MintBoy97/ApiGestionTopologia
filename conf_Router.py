@@ -47,17 +47,3 @@ def config_RIP(network, ipRouter, usuar = 'admin', contra = 'admin01', secret = 
     cmd = ['conf t', 'router rip', f'network {network}']
     conectar(cisco, cmd)
     print(f'Configuracion RIP en el router {ipRouter} se completo con exito')
-
-def config_Estatico(ipRouter, lanConexion, NetMask, primerSalto, usuar = 'admin', contra = 'admin01', secret = '1234'):
-    cisco={
-        "device_type":"cisco_xe",
-        "ip":ipRouter,
-        "username":user,
-        "password":contra,
-        "secret":secret
-    }
-    cmd = ['conf t', f'ip route {lanConexion} {NetMask} {primerSalto}']
-    conectar(cisco, cmd)
-
-def config_OSPF():
-    pass
